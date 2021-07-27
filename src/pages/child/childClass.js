@@ -1,7 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-// import { renderIntoDocument } from "react-dom/cjs/react-dom-test-utils.production.min";
-const bootstrap = require('bootstrap');
+// const bootstrap = require('bootstrap');
 class Childclass extends Component {
   constructor(props) {
     super(props);
@@ -63,9 +62,9 @@ class Childclass extends Component {
 
   async handleCustomerCreation(e) {
     e.preventDefault();
-    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-        keyboard: false
-      })
+    // var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    //     keyboard: false
+    //   })
     
     try {
       if (this.state.text == "Add Customer") {
@@ -74,14 +73,14 @@ class Childclass extends Component {
           this.state.responseEditData
         );
         
-        myModal.hide(modalToggle);
+        // myModal.hide(modalToggle);
         return result;
       } else {
         let result = await axios.put(
           `http://localhost:4000/users/${this.state.responseEditData._id}`,
           this.state.responseEditData
         );
-        myModal.hide(modalToggle);
+        // myModal.hide(modalToggle);
         return result;
       }
     } catch (error) {
